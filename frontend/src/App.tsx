@@ -33,7 +33,7 @@ const useStore = create<{
   company: string;
   setCompany: (company: string) => void;
 }>((set) => ({
-  company: "NexaERP",
+  company: "Petro Track",
   setCompany: (company) => set({ company }),
 }));
 
