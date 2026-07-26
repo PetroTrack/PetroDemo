@@ -77,7 +77,7 @@ function App() {
       <div className="min-h-screen bg-slate-100 p-10">
 
         <Typography variant="h3" align="center" fontWeight="bold">
-          Petroleum Transport Compliance Management System
+          PetroTrack Compliance Management System
         </Typography>
 
         <Typography align="center" sx={{ mb: 5 }}>
