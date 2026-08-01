@@ -30,6 +30,7 @@ export default function RegisterPage() {
     resolver: zodResolver(registerSchema),
     defaultValues: {
       fullName: "",    
+      lastName: "",
       email: "",
       password: "",
       confirmPassword: "",
@@ -81,7 +82,7 @@ export default function RegisterPage() {
 
           </div>
 
-          {/* <div>
+          <div>
 
             <label className="mb-2 block text-sm font-medium">
               Last Name
@@ -96,7 +97,7 @@ export default function RegisterPage() {
               {errors.lastName?.message}
             </p>
 
-          </div> */}
+          </div>
 
         </div>
 
@@ -193,6 +194,9 @@ export default function RegisterPage() {
         >
           {registerMutation.isPending ? "Creating..." : "Create Account"}
         </button>
+<p className="mt-2 text-center text-lg font-bold text-slate-500">
+  Secure. Compliant. Always Ready.
+</p>
 
         <p className="text-center text-sm text-gray-600">
 

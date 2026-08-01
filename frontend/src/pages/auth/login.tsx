@@ -188,7 +188,9 @@ export default function LoginPage() {
             "Sign In"
           )}
         </button>
-
+<p className="mt-2 text-center text-lg font-bold text-slate-500">
+  Secure. Compliant. Always Ready.
+</p>
         {/* Register */}
 
         <p className="text-center text-sm text-gray-600">

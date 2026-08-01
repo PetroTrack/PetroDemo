@@ -6,6 +6,10 @@ export const registerSchema = z
       .string()
       .trim()
       .min(3, "Full name is required"),
+    lastName: z
+      .string()
+      .trim()
+      .min(2, "Last name is required"),
 
     email: z
       .string()
