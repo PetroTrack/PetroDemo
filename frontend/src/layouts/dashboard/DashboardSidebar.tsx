@@ -10,19 +10,27 @@ import {
 
 import NavItem from "../../design-system/navigation/NavItem";
 
-export default function DashboardSidebar() {
+interface DashboardSidebarProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+export default function DashboardSidebar({
+  open,
+}: DashboardSidebarProps) {
   return (
-    <aside className="flex w-64 flex-col bg-slate-900">
-
+    <aside
+      className={`border-r border-slate-200 bg-slate-900 transition-all duration-300 ${
+        open ? "w-64" : "w-0 overflow-hidden"
+      }`}
+    >
       <div className="flex h-16 items-center border-b border-slate-800 px-6">
-
-        <h1 className="text-xl font-bold text-white">
+        <h1 className="whitespace-nowrap text-xl font-bold text-white">
           PetroTrack
         </h1>
-
       </div>
 
-      <nav className="flex-1 space-y-1 p-3">
+      <nav className="space-y-1 p-3">
 
         <NavItem
           to="/dashboard"
@@ -67,7 +75,6 @@ export default function DashboardSidebar() {
         />
 
       </nav>
-
     </aside>
   );
 }

@@ -1,29 +1,41 @@
 import {
   Bell,
+  PanelLeft,
   Search,
 } from "lucide-react";
 
 interface Props {
   title: string;
+  onMenuClick: () => void;
 }
 
 export default function DashboardHeader({
   title,
+  onMenuClick,
 }: Props) {
   return (
-    <header className="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-6">
+    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-slate-200 bg-white px-6">
 
-      <div>
+      <div className="flex items-center gap-4">
 
-        <h1 className="text-2xl font-semibold text-slate-900">
-          {title}
-        </h1>
+        <button
+          onClick={onMenuClick}
+          className="rounded-lg border border-slate-200 p-2 transition-all hover:bg-slate-100"
+        >
+          <PanelLeft size={22} />
+        </button>
+
+        <div>
+          <h1 className="text-2xl font-semibold text-slate-900">
+            {title}
+          </h1>
+        </div>
 
       </div>
 
       <div className="flex items-center gap-4">
 
-        <div className="relative">
+        <div className="relative hidden lg:block">
 
           <Search
             size={18}
@@ -37,15 +49,35 @@ export default function DashboardHeader({
 
         </div>
 
-        <button className="rounded-lg p-2 hover:bg-slate-100">
+        <button className="relative rounded-lg p-2 hover:bg-slate-100">
+
           <Bell size={20} />
+
+          <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500" />
+
         </button>
 
-        <img
-          src="/avatar.png"
-          alt=""
-          className="h-10 w-10 rounded-full"
-        />
+        <button className="flex items-center gap-3 rounded-lg px-2 py-1 hover:bg-slate-100">
+
+          <img
+            src="/avatar.png"
+            alt="User"
+            className="h-10 w-10 rounded-full border border-slate-300 object-cover"
+          />
+
+          <div className="hidden text-left xl:block">
+
+            <p className="text-sm font-semibold text-slate-800">
+              Dennis
+            </p>
+
+            <p className="text-xs text-slate-500">
+              Administrator
+            </p>
+
+          </div>
+
+        </button>
 
       </div>
 

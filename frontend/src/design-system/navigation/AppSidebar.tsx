@@ -22,7 +22,6 @@ export default function AppSidebar() {
           alt="PetroTrack"
           className="h-9"
         />
-
       </div>
 
       <nav className="flex-1 space-y-1 p-3">
